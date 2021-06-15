@@ -6,11 +6,11 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 16:30:29 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 16:35:44 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/15 16:56:10 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint()
+int ft_isprint(int c)
 {
 	if ((c >= 32 && c <= 127))
 		return 1;
