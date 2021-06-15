@@ -6,9 +6,11 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 10:01:01 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 10:17:33 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/15 10:39:01 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 int	ft_strlen(char *c)
 {
