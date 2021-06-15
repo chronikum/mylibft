@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 11:12:55 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 13:32:06 by jfritz           ###   ########.fr       */
+/*   Created: 2021/06/15 11:01:55 by jfritz            #+#    #+#             */
+/*   Updated: 2021/06/15 11:04:34 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void ft_bzero(void *s, size_t n)
+int	ft_isdigit(int c)
 {
-	unsigned int c;
-	unsigned char *t;
-
-	c = 0;
-	t = (unsigned char*)s;
-	while (n > c)
-	{
-		t[c] = '\0';
-		c++;
-	}
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
