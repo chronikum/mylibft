@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:13:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/16 11:32:02 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/16 11:41:50 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	is_digit(char c)
 	return ((c >= 48) && (c <= 57));
 }
 
-const char*	ft_skip_plus_minus(const char *str, int p, int *m)
+int	ft_skip_plus_minus(const char *str, int p, int *m)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	if (str[p] == '-' && is_digit(str[p + 1]))
@@ -38,7 +38,7 @@ const char*	ft_skip_plus_minus(const char *str, int p, int *m)
 	}
 	if (is_digit(str[p]))
 		*m = 1;
-	return &str[p + a];
+	return (p + a);
 }
 
 int	ft_atoi(const char *str)
@@ -52,9 +52,9 @@ int	ft_atoi(const char *str)
 	m = 0;
 	while (whitespace(str[i]))
 		i++;
-	str = ft_skip_plus_minus(str, i, &m);
+	i = ft_skip_plus_minus(str, i, &m);
 	if (m == 0)
-		return 0;
+		return (0);
 	if (str[i] == '0')
 		i++;
 	while (is_digit(str[i]) && (str[i] != '\0'))
@@ -63,13 +63,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (r * m);
-}
-
-int main()
-{
-	char test[] = " 24044";
-	int t = ft_atoi(test);
-	int v = atoi(test);
-	printf("%d\n", t);
-	printf("%d", v);
 }
