@@ -6,11 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 16:11:26 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 16:11:27 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/16 15:52:01 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <stddef.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 	int				f;
