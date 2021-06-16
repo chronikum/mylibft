@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:13:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 15:52:27 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/16 11:32:02 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,27 @@ int	is_digit(char c)
 	return ((c >= 48) && (c <= 57));
 }
 
-int	ft_count_minus(int r, int m)
+const char*	ft_skip_plus_minus(const char *str, int p, int *m)
 {
-	if (m % 2 == 1)
-		return (-r);
-	return (r);
+	int a;
+
+	a = 0;
+	if (str[p] == '-' && is_digit(str[p + 1]))
+	{
+		*m = -1;
+		a++;
+	}
+	if (str[p] == '+' && is_digit(str[p + 1]))
+	{
+		*m = 1;
+		a++;
+	}
+	if (is_digit(str[p]))
+		*m = 1;
+	return &str[p + a];
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		r;
@@ -39,19 +52,24 @@ int	ft_atoi(char *str)
 	m = 0;
 	while (whitespace(str[i]))
 		i++;
-	while (((str[i] == 45) || (str[i] == 43)))
+	str = ft_skip_plus_minus(str, i, &m);
+	if (m == 0)
+		return 0;
+	if (str[i] == '0')
+		i++;
+	while (is_digit(str[i]) && (str[i] != '\0'))
 	{
-		if (str[i] == '-')
-			m++;
+		r = ((10 * r) + (str[i] - 48));
 		i++;
 	}
-	while (is_digit(str[i]))
-	{
-		if ((!(is_digit(str[i]))) && (r != 0))
-			return (ft_count_minus(r, m));
-		if (is_digit(str[i]))
-			r = ((10 * r) + (str[i] - 48));
-		i++;
-	}
-	return (ft_count_minus(r, m));
+	return (r * m);
+}
+
+int main()
+{
+	char test[] = " 24044";
+	int t = ft_atoi(test);
+	int v = atoi(test);
+	printf("%d\n", t);
+	printf("%d", v);
 }
