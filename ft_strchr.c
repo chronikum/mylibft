@@ -6,19 +6,9 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 16:51:32 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/16 13:42:19 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/17 15:20:41 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char *c)
-{
-	int	n;
-
-	n = 0;
-	while (c[n] != '\0')
-		n++;
-	return (n);
-}
 
 char	*ft_strchr(const char *s, int c)
 {
