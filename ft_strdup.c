@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:15:21 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 12:21:06 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 13:59:00 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_str_len(char *c)
+int	ft_strlen(char *c)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ char	*ft_strdup(const char *s1)
 {
 	char	*dest;
 
-	dest = malloc(ft_str_len(s1) + 1);
-	ft_strcpy(dest, s1);
+	dest = malloc(ft_strlen((char*)s1) + 1);
+	ft_strcpy((char *) dest, (char *) s1);
 	return (dest);
 }
