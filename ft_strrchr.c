@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:42:49 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 15:00:12 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:05:31 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *c);
+int	ft_strlen(const char *c);
 
 char	*ft_strrchr(const char *s, int c)
 {
