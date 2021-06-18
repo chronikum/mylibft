@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 10:18:12 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 11:03:16 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 11:55:47 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int a)
+int	ft_tolower(int c)
 {
-	if ((a >= 65 && a <= 90))
-		(a += 32);
-	return (a);
+	if ((c >= 65 && c <= 90))
+		(c += 32);
+	return (c);
 }
