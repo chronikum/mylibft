@@ -6,15 +6,15 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 13:41:35 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:40:25 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-int		atoi(const char *str);
-void	bzero(void *s, size_t n);
+int		ft_atoi(const char *str);
+void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*memmove(void *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
