@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:27:12 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 11:05:02 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 13:57:23 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ void	*ft_memset(void *b, int c, size_t len)
 		t[lenc] = d;
 		lenc++;
 	}
+
+	return b;
 }
