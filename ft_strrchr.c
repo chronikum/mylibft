@@ -6,19 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:42:49 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/16 13:51:57 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:00:12 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *c)
-{
-	int	n;
+#include "libft.h"
 
-	n = 0;
-	while (c[n] != '\0')
-		n++;
-	return (n);
-}
+int	ft_strlen(char *c);
 
 char	*ft_strrchr(const char *s, int c)
 {

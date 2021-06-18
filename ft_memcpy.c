@@ -6,11 +6,11 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:41:00 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 10:50:11 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:58:55 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

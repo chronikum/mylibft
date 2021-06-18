@@ -6,21 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:58:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 13:59:39 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:00:06 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_strlen(char *c)
-{
-	int	n;
-
-	n = 0;
-	while (c[n] != '\0')
-		n++;
-	return (n);
-}
+int	ft_strlen(char *c);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

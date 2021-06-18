@@ -6,21 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:03 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 13:59:15 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:59:45 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-// fix that
-int	ft_strlen(char *c)
-{
-	int	n;
+#include "libft.h"
 
-	n = 0;
-	while (c[n] != '\0')
-		n++;
-	return (n);
-}
+int	ft_strlen(char *c);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

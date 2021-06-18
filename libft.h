@@ -6,12 +6,16 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 14:40:25 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:57:13 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+#include <stddef.h>
+
+void	*malloc(size_t size);
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

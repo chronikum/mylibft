@@ -6,11 +6,14 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:25:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 13:20:14 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:59:34 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+
+int	ft_strlen(char *c);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -29,34 +32,6 @@ char	*ft_strcat(char *dest, char *src)
 	dest[i + j] = '\0';
 	return (dest);
 }
-
-int	ft_strlen(char *c)
-{
-	int	i;
-
-	i = 0;
-	while (c[i])
-		i++;
-	return (i);
-}
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	unsigned int	e;
-	unsigned char	*d;
-	unsigned char	*s;
-
-	d = (unsigned char *) dst;
-	s = (unsigned char *) src;
-	e = 0;
-	while (n > e)
-	{
-		d[e] = s[e];
-		e++;
-	}
-	return (dst);
-}
-
 
 char *ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,9 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:13:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/16 11:41:50 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 14:58:11 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_isdigit(char c);
 
 int	whitespace(char c)
 {
@@ -16,27 +20,23 @@ int	whitespace(char c)
 		|| (c == '\v') || (c == '\f') || (c == '\r') || (c == ' '));
 }
 
-int	is_digit(char c)
-{
-	return ((c >= 48) && (c <= 57));
-}
 
 int	ft_skip_plus_minus(const char *str, int p, int *m)
 {
 	int	a;
 
 	a = 0;
-	if (str[p] == '-' && is_digit(str[p + 1]))
+	if (str[p] == '-' && ft_isdigit(str[p + 1]))
 	{
 		*m = -1;
 		a++;
 	}
-	if (str[p] == '+' && is_digit(str[p + 1]))
+	if (str[p] == '+' && ft_isdigit(str[p + 1]))
 	{
 		*m = 1;
 		a++;
 	}
-	if (is_digit(str[p]))
+	if (ft_isdigit(str[p]))
 		*m = 1;
 	return (p + a);
 }
@@ -57,7 +57,7 @@ int	ft_atoi(const char *str)
 		return (0);
 	if (str[i] == '0')
 		i++;
-	while (is_digit(str[i]) && (str[i] != '\0'))
+	while (ft_isdigit(str[i]) && (str[i] != '\0'))
 	{
 		r = ((10 * r) + (str[i] - 48));
 		i++;
