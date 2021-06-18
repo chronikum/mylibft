@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:27:12 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 13:52:51 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 11:05:02 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned int	lenc;
 	unsigned char	d;
@@ -21,7 +21,7 @@ void *ft_memset(void *b, int c, size_t len)
 	lenc = 0;
 	lenc = 0;
 	d = (unsigned char)c;
-	t = (unsigned char*)b;
+	t = (unsigned char *)b;
 	while (len > lenc)
 	{
 		t[lenc] = d;
