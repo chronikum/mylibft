@@ -6,16 +6,18 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 10:01:01 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 16:18:55 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 10:57:44 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *c)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
 	int	n;
 
 	n = 0;
-	while (c[n] != '\0')
+	while (s[n] != '\0')
 		n++;
 	return (n);
 }
