@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:03 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 11:50:13 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 13:40:06 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (t > dstsize)
 		return (dstsize + s);
 	return (t + s);
-}
-
-int main()
-{
-    char src1[] = "12345678";
-    char dest1[] = "4444";
-    char src2[] = "12345678";
-    char dest2[] = "4444";
-	size_t t = ft_strlen(src2);
-
-    printf("%i, %s\n", (int) ft_strlcat(dest1, src1, t), dest1);
-    printf("%i, %s\n", (int) strlcat(dest2, src2, t), dest2);
 }
