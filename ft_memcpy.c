@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:41:00 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 14:58:55 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:39:55 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	if (dst == 0 && src == 0)
+		return (0);
 	unsigned int	e;
 	unsigned char	*d;
 	unsigned char	*s;

@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:25:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 15:08:31 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:40:28 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,5 @@ char *ft_strjoin(char const *s1, char const *s2)
 	d = malloc(sizeof(char) * (size - 1));
 	ft_memcpy(d, (const void *) s1, ft_strlen((char *) s1));
 	ft_memcpy(&d[ft_strlen((char *) s1)], s2, ft_strlen((char *) s2));
-
 	return (d);
 }
