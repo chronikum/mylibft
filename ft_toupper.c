@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 10:18:12 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/15 10:56:56 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 11:54:50 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int a)
+int	ft_toupper(int c)
 {
-	if ((a >= 97 && a <= 122))
-		(a -= 32);
-	return (a);
+	if ((c >= 97 && c <= 122))
+		(c -= 32);
+	return (c);
 }
