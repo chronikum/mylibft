@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:56:50 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 15:01:49 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:52:44 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*p;
 
-	if (count == 0 || size == 0)
-		return (0);
 	p = malloc(count * size);
-	ft_bzero(p, count * size);
-	return (p);
+	if (p != 0)
+	{
+		ft_bzero(p, count * size);
+		return (p);
+	}
+	return (0);
 }
