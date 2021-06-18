@@ -6,13 +6,15 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:25:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 15:04:33 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:08:31 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *c);
+size_t	ft_strlen(const char *c);
+
+
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 char	*ft_strcat(char *dest, char *src)

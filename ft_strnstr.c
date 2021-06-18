@@ -6,13 +6,13 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:58:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 15:05:21 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 15:08:21 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *c);
+size_t	ft_strlen(const char *c);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
