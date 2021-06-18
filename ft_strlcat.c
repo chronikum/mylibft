@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:03 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/17 17:04:30 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/18 11:50:13 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,33 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	t;
 	size_t	j;
 	size_t	i;
+	size_t	s;
 
 	t = ft_strlen(dst);
 	j = t;
 	i = 0;
-	while (t <= dstsize && src[i] != '\0' && j < dstsize - 1)
+	s = ft_strlen(src);
+	while ((t < dstsize) && (src[i] != '\0') && (j < dstsize - 1))
 	{
 		dst[j] = src[i];
 		j++;
 		i++;
 	}
-	if (dstsize != 0 && t > dstsize)
+	if (dstsize != 0 && (t < dstsize))
 		dst[j] = '\0';
-	return (dstsize + ft_strlen(src));
+	if (t > dstsize)
+		return (dstsize + s);
+	return (t + s);
 }
 
 int main()
 {
-    char src1[] = "11";
-    char dest1[] = "222";
-    char src2[] = "11";
-    char dest2[] = "222";
-    printf("%i, %s\n", (int) ft_strlcat(dest1, src1, 5), dest1);
-    printf("%i, %s\n", (int) strlcat(dest2, src2, 5), dest2);
+    char src1[] = "12345678";
+    char dest1[] = "4444";
+    char src2[] = "12345678";
+    char dest2[] = "4444";
+	size_t t = ft_strlen(src2);
+
+    printf("%i, %s\n", (int) ft_strlcat(dest1, src1, t), dest1);
+    printf("%i, %s\n", (int) strlcat(dest2, src2, t), dest2);
 }
