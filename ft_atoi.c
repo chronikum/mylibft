@@ -20,7 +20,6 @@ int	whitespace(char c)
 		|| (c == '\v') || (c == '\f') || (c == '\r') || (c == ' '));
 }
 
-
 int	ft_skip_plus_minus(const char *str, int p, int *m)
 {
 	int	a;
