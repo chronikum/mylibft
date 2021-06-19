@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-size_t	ft_strlen(const char *c);
+size_t	ft_strlen(const char *s);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -41,4 +42,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		j = 0;
 	}
 	return ((void *)0);
+}
+
+int main()
+{
+	char * big = "123456789";
+	char * little = "9";
+	size_t max = 8;
+	char *s2 = ft_strnstr(big, little, max);
+
+	printf("%s", s2);
 }
