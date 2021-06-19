@@ -14,7 +14,6 @@
 
 size_t	ft_strlen(const char *s);
 
-
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 char	*ft_strcat(char *dest, char *src)
@@ -35,14 +34,16 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*d;
-	unsigned int size;
+	char			*d;
+	unsigned int	size;
 
-	size = ft_strlen((char *) s1) + ft_strlen((char *) s2);
-	d = malloc(sizeof(char) * (size - 1));
+	size = ft_strlen((char *) s1) + ft_strlen((char *) s2) + 1;
+	d = malloc(sizeof(char) * (size));
 	ft_memcpy(d, (const void *) s1, ft_strlen((char *) s1));
 	ft_memcpy(&d[ft_strlen((char *) s1)], s2, ft_strlen((char *) s2));
+	ft_memcpy(&d[ft_strlen((char *) s1)], s2, ft_strlen((char *) s2));
+	ft_memcpy(&d[size - 1], "\0", 1);
 	return (d);
 }
