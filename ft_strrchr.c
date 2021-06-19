@@ -24,8 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	t = 0;
 	while (s[t] != '\0')
 		t++;
-	t++;
-	while (t != 0)
+	while (t != -1)
 	{
 		if ((s[t] != c))
 			t--;
