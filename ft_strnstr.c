@@ -10,46 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int	h;
-	int				n;
-	int				l;
-	unsigned int	j;
+	size_t	h;
+	size_t	l;
 
-	l = 0;
 	h = 0;
-	n = 0;
-	j = 0;
 	l = ft_strlen(needle);
+	if (l == 0 || len == 0)
+		return ((char *)(&haystack[0]));
 	while (haystack[h])
 	{
-		while (haystack[(h + n)] == needle[n]
-			&& haystack[(h + n)] && (len >= j))
+		if (ft_strncmp(&haystack[h], needle, ft_strlen(needle)) == 0)
 		{
-			n++;
-			j++;
-		}
-		if (l == n)
+			if ((ft_strlen(needle) + h) > len)
+				return ((void *)0);
 			return ((char *)(&haystack[h]));
+		}
 		h++;
-		n = 0;
-		j = 0;
 	}
 	return ((void *)0);
-}
-
-int main()
-{
-	char * big = "123456789";
-	char * little = "9";
-	size_t max = 8;
-	char *s2 = ft_strnstr(big, little, max);
-
-	printf("%s", s2);
 }
