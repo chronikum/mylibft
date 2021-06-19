@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/19 16:46:54 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/19 23:06:18 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <unistd.h>
 
 void	*malloc(size_t size);
 
@@ -47,4 +48,8 @@ int		ft_tolower(int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
+
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
 #endif
