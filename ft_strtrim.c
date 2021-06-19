@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 16:35:22 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/19 18:33:09 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/19 18:37:23 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int				end;
 	char			*r;
 
+	if (!s1 || !set)
+		return (NULL);
 	end = ft_strlen(s1);
 	start = 0;
 	l = ft_strlen(s1);
@@ -53,7 +55,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		l--;
 	}
 	r = ft_substr(s1, start, l);
-	if (!r)
-		return (0);
 	return (r);
 }
