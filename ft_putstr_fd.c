@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 22:34:01 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/19 22:36:35 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/20 20:06:49 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	if (!s)

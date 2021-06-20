@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/20 20:05:51 by jfritz            #+#    #+#             */
+/*   Updated: 2021/06/20 20:06:08 by jfritz           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd);
 
-int ft_check_biggest(int n, int fd)
+int	ft_check_biggest(int n, int fd)
 {
 	if (n == -2147483648)
 	{
@@ -22,8 +33,8 @@ int ft_check_biggest(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int t;
-	char c;
+	unsigned int	t;
+	char			c;
 	
 	t = 0;
 	c = n + 48;
