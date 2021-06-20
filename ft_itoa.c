@@ -6,18 +6,16 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 16:58:31 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/20 19:36:34 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/20 19:48:48 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-int ft_numberlength(int n)
+int	ft_numberlength(int n)
 {
-	int o;
-	int l;
+	int	o;
+	int	l;
 
 	o = n;
 	l = 0;
@@ -28,15 +26,22 @@ int ft_numberlength(int n)
 		o /= 10;
 		l++;
 	}
-	return l;
+	return (l);
 }
 
-char *ft_itoa(int n)
+void	ft_complete_string(char *str, int neg, int n)
 {
-	int neg;
-	char *str;
-	int length;
-	
+	if (neg == 1)
+		str[0] = '-';
+	str[ft_numberlength(n) + neg] = '\0';
+}
+
+char	*ft_itoa(int n)
+{
+	int		neg;
+	char	*str;
+	int		length;
+
 	neg = 0;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -51,14 +56,11 @@ char *ft_itoa(int n)
 	str = (char *)malloc((sizeof(char) * ft_numberlength(n)) + 1 + neg);
 	if (!str)
 		return (0);
-	if (neg == 1)
-		str[0] = '-';
-	str[ft_numberlength(n) + neg] = '\0'; 
-	while (length)
+	ft_complete_string(str, neg, n);
+	while (length--)
 	{
-		length--;
 		str[length + neg] = (n % 10) + '0';
 		n /= 10;
 	}
-	return str;
+	return (str);
 }
