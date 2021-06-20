@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/20 16:23:52 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/20 18:02:10 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,3 @@ char **ft_split(char const *s, char c)
 		return (NULL);
 	return (d);
 }
-
-// int main()
-// {
-// 	char *to_split = "T12TT12TT12T";
-// 	char placeholder = 'T';
-
-// 	char **r = ft_split((const char*) to_split, placeholder);
-// 	// printf("%s", r[0]);
-// }

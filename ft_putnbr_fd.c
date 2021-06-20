@@ -48,9 +48,3 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &c, 1);
 	}
 }
-
-int main()
-{
-	int test = 5361433;
-	ft_putnbr_fd(test, 1);
-}
