@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:25:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/19 16:38:16 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/20 16:25:12 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char			*d;
 	unsigned int	size;
 
+	if (!s1 || !s2)
+		return (0);
 	size = ft_strlen((char *) s1) + ft_strlen((char *) s2) + 1;
 	d = malloc(sizeof(char) * (size));
 	if (!d)
