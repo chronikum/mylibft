@@ -6,14 +6,11 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/20 20:14:37 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/20 20:18:42 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-// FIX
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
