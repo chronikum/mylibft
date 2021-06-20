@@ -6,7 +6,7 @@
 #    By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 13:43:08 by jfritz            #+#    #+#              #
-#    Updated: 2021/06/18 14:52:13 by jfritz           ###   ########.fr        #
+#    Updated: 2021/06/20 13:17:42 by jfritz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,4 +23,4 @@ ${NAME}: *.c
 clean:
 		rm -rvf *.o
 
-re: clean all
+re: clean ${NAME}
