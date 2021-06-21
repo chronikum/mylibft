@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/21 13:33:03 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/21 14:06:45 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ char	*ft_get_index(const char *s, char c, int p)
 	l = 0;
 	if (ft_strlen(s) == 0)
 		return (0);
-	if (s[0] != c)
+	if (s[0] != c && p == 0)
 	{
 		w++;
-		return &s[d];
+		l = ft_strlen_char(&s[0], c);
+		printf("FIRST CHECKING LENGTH: %d\n", l);
+		return ft_substr(&s[d], 0, l);
 	}
 	while (d < (int) ft_strlen(s))
 	{
@@ -87,13 +89,10 @@ int	ft_word_count(char *s, char c)
 
 	d = 0;
 	w = 0;
-	if (ft_strlen(s) == 0)
-		return (0);
-	if (s[0] != c)
-		w++;
 	while (d < (int) ft_strlen(s))
 	{
-		if (s[d] == c && (s[d + 1] != c))
+		if ((s[d] == c && (s[d + 1] != c) && (s[d + 1] != '\0'))
+			|| (d == 0 && s[d] != c))
 			w++;
 		d++;
 	}
@@ -123,9 +122,9 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char *to_split = " tss=1232123=            test1     test2 test3";
+	char *to_split = " test0      test1     test2 test3 ";
 	char placeholder = ' ';
 
 	char **c = ft_split(to_split, placeholder);
-	// printf("\nFIRST :%s", c[]);
+	printf("\nFIRST :%s", c[3]);
 }
