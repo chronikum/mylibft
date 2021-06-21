@@ -6,7 +6,7 @@
 #    By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 13:43:08 by jfritz            #+#    #+#              #
-#    Updated: 2021/06/21 15:13:54 by jfritz           ###   ########.fr        #
+#    Updated: 2021/06/21 16:08:18 by jfritz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,16 @@ ft_bzero.c ft_isascii.c ft_memccpy.c ft_memmove.c ft_putnbr_fd.c ft_strdup.c ft_
 ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c \
 ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c ft_strlcat.c ft_strncmp.c ft_substr.c
 
+BNS = ft_lstnew.c ft_lstsize.c
+
 all: $(NAME)
 
 ${NAME}:
-	${CC} ${CFLAGS} -c ft_*.c
+	${CC} ${CFLAGS} -c ${SRC}
 	ar rc ${NAME} *.o
 
 bonus:
-	${CC} ${CFLAGS} -c _ft_*.c
+	${CC} ${CFLAGS} -c ${BNS}
 	ar rc ${NAME} *.o
 
 clean:
