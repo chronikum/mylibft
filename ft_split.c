@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/21 11:21:26 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/21 13:33:03 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strtrim(char const *s1, char const *set);
 
 size_t	ft_strlen_char(const char *s, char c)
 {
@@ -26,7 +27,15 @@ size_t	ft_strlen_char(const char *s, char c)
 
 	n = 0;
 	i = 0;
-	while (!(s[i] == c && (s[i + 1] != c || s[i + 1] == '\0')))
+	if (s[0] != c)
+	{
+		while (s[i] != c)
+			i++;
+		return i;
+	}
+	while (s[i + 1] != c)
+		i++;
+	if (!(s[i] == c && (s[i + 1] != c)))
 		i++;
 	next = (const char*) &s[1 + i];
 	if (!next)
@@ -35,28 +44,40 @@ size_t	ft_strlen_char(const char *s, char c)
 	return (d);
 }
 
-char	*ft_get_index(char *s, char c, int p)
+char	*ft_get_index(const char *s, char c, int p)
 {
-	unsigned int	x;
-	int				u;
-	size_t			l;
+	int	d;
+	int	w;
+	int	l;
+	char *s1;
 
-	x = 0;
-	u = 0;
-	while (s[x])
+	d = 0;
+	w = 0;
+	l = 0;
+	if (ft_strlen(s) == 0)
+		return (0);
+	if (s[0] != c)
 	{
-		if ((s[x] == c && (s[x + 1] != c || s[x + 1] == '\0')))
-		{
-			if (p == u)
-			{
-				l = ft_strlen_char(&s[x], c);
-				return (ft_substr(&s[x], x, l));
-			}
-			u++;
-		}
-		x++;
+		w++;
+		return &s[d];
 	}
-	return (&s[p]);
+	while (d < (int) ft_strlen(s))
+	{
+		if (s[d] == c && s[d + 1] != c)
+		{
+			if (w == p)
+			{
+				l = ft_strlen_char(&s[d], c);
+				s1 = ft_substr(&s[d], 0, l);
+				char *c1 = ft_strtrim(ft_substr(&s[d], 0, l), &c);
+				printf("|%s| and length: %d\n", c1, ft_strlen(c1));
+				return c1;
+			}
+			w++;
+		}
+		d++;
+	}
+	return &s[d];
 }
 
 int	ft_word_count(char *s, char c)
@@ -69,12 +90,10 @@ int	ft_word_count(char *s, char c)
 	if (ft_strlen(s) == 0)
 		return (0);
 	if (s[0] != c)
-	{
 		w++;
-	}
 	while (d < (int) ft_strlen(s))
 	{
-		if (s[d] == c && (s[d + 1] != c || s[d + 1] == '\0'))
+		if (s[d] == c && (s[d + 1] != c))
 			w++;
 		d++;
 	}
@@ -94,7 +113,7 @@ char	**ft_split(char const *s, char c)
 	while (e < w)
 	{
 		d[e] = ft_get_index((char *) s, c, e);
-		printf("LOS: %s", d[e]);
+		printf("%d: |%s|\n",e, d[e]);
 		e++;
 	}
 	if (!d)
@@ -104,9 +123,9 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char *to_split = "     tss=1232123=            test1     test2 test3";
+	char *to_split = " tss=1232123=            test1     test2 test3";
 	char placeholder = ' ';
 
 	char **c = ft_split(to_split, placeholder);
-	printf("\nFIRST :%s", c[2]);
+	// printf("\nFIRST :%s", c[]);
 }
