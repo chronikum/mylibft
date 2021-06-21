@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/21 14:06:45 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/21 14:13:00 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ char	*ft_get_index(const char *s, char c, int p)
 	l = 0;
 	if (ft_strlen(s) == 0)
 		return (0);
-	if (s[0] != c && p == 0)
+	if (s[0] != c)
 	{
 		w++;
 		l = ft_strlen_char(&s[0], c);
 		printf("FIRST CHECKING LENGTH: %d\n", l);
-		return ft_substr(&s[d], 0, l);
+		if (p == 0)
+			return ft_strtrim(ft_substr(&s[d], 0, l), &c);
 	}
 	while (d < (int) ft_strlen(s))
 	{
@@ -122,7 +123,7 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char *to_split = " test0      test1     test2 test3 ";
+	char *to_split = "test0      test1     test2 test3 ";
 	char placeholder = ' ';
 
 	char **c = ft_split(to_split, placeholder);
