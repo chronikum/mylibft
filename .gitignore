@@ -5,3 +5,4 @@ a.out
 settings.json
 extensions.json
 .vscode/
+.ignore
