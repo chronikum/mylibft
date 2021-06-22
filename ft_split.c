@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/22 10:52:21 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/22 11:43:27 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	char			**d;
 	unsigned int	w;
 	unsigned int	e;
-	
+
 	if (!s)
 		return (0);
 	e = 0;
