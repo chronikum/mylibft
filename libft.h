@@ -6,15 +6,14 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/21 15:43:52 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/22 14:52:28 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
-# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
@@ -22,7 +21,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-void	*malloc(size_t size);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
