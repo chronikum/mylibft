@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 18:38:10 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/22 10:50:04 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/22 10:52:21 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 size_t	ft_clen(const char *s, char c)
 {
-	size_t	n;
 	char	*next;
 	size_t	d;
 	size_t	i;
 
-	n = 0;
 	i = 0;
 	if (s[0] != c)
 	{
