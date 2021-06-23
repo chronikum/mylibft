@@ -6,18 +6,17 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:58:58 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/21 16:17:42 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 09:22:24 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-
 	while (lst)
 	{
 		lst = lst->next;
