@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:15:44 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 10:12:20 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 10:19:00 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ int	ft_jump_to_end(char *s, int i)
 	return (i);
 }
 
+int	ft_jump_to_word_end(char *s, char c, int i)
+{
+	while (s[i] == c && s[i])
+		i++;
+	return (i);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -49,8 +56,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
-			i++;
+		i = ft_jump_to_word_end((char *)s, c, i);
 		if (s[i])
 		{
 			j = i;
