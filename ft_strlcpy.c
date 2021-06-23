@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:25:04 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 14:59:51 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 12:11:24 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	c = 0;
 	while (src[l] != '\0')
 		l++;
-	while (((dstsize - 1) > c) && src[c] != '\0' && dst[c] != '\0')
+	while (src[c] && c < (dstsize - 1))
 	{
 		if (dstsize == 0)
 			return (l);
