@@ -6,7 +6,7 @@
 #    By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 13:43:08 by jfritz            #+#    #+#              #
-#    Updated: 2021/06/22 14:35:33 by jfritz           ###   ########.fr        #
+#    Updated: 2021/06/23 09:44:35 by jfritz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ bonus:
 	ar rc ${NAME} *.o
 
 clean:
-		rm -rvf *.o
+		rm -rf *.o
 
 fclean: clean
 	/bin/rm -f $(NAME)
