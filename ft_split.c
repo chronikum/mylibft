@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:15:44 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 08:55:55 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 09:05:36 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 size_t	ft_strlen(const char *s);
 
-int  ft_create_result(char ***result, char *s)
+int	ft_create_result(char ***result, char *s)
 {
 	*result = malloc(sizeof(char *) * ft_strlen(s) + 1);
 	if (!*result)
@@ -23,7 +23,15 @@ int  ft_create_result(char ***result, char *s)
 	return (1);
 }
 
-char **ft_split(char const *s, char c)
+void	ft_set_zero(int *i, int *j, int *k, int *l)
+{
+	*i = 0;
+	*j = 0;
+	*k = 0;
+	*l = 0;
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		i;
@@ -31,9 +39,7 @@ char **ft_split(char const *s, char c)
 	int		k;
 	int		l;
 
-	i = 0;
-	j = 0;
-	l = 0;
+	ft_set_zero(&i, &j, &k, &l);
 	if (!ft_create_result(&result, (char *) s) || !s)
 		return (0);
 	while (s[i])
@@ -54,9 +60,10 @@ char **ft_split(char const *s, char c)
 	return (result);
 }
 
+
 int	main()
 {
-	char *s = "Das      ist ein Test    d";
+	char *s = "Das      ist ein Test    d ddddd d s";
 	char p = ' ';
 
 	char **r = ft_split(s, p);
@@ -65,4 +72,7 @@ int	main()
 	printf("%s", r[2]);
 	printf("%s", r[3]);
 	printf("%s", r[4]);
+	printf("%s", r[5]);
+	printf("%s", r[6]);
+	printf("%s", r[7]);
 }
