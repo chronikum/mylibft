@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:15:44 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 09:05:36 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 09:19:53 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,21 +58,4 @@ char	**ft_split(char const *s, char c)
 	}
 	result[l] = 0;
 	return (result);
-}
-
-
-int	main()
-{
-	char *s = "Das      ist ein Test    d ddddd d s";
-	char p = ' ';
-
-	char **r = ft_split(s, p);
-	printf("%s", r[0]);
-	printf("%s", r[1]);
-	printf("%s", r[2]);
-	printf("%s", r[3]);
-	printf("%s", r[4]);
-	printf("%s", r[5]);
-	printf("%s", r[6]);
-	printf("%s", r[7]);
 }
