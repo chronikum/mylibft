@@ -6,33 +6,14 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:25:18 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/20 16:25:12 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 09:25:05 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlen(const char *s);
-
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j] != '\0')
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	return (dest);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

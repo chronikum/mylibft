@@ -6,9 +6,11 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 10:18:12 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/18 11:55:47 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 09:25:50 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
