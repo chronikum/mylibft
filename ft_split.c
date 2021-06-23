@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:15:44 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 10:03:07 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 10:12:20 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	ft_set_zero(int *i, int *j, int *l)
 	*l = 0;
 }
 
-int		ft_jump_to_end(char *s, int i)
+int	ft_jump_to_end(char *s, int i)
 {
 	if (s[i])
 		i++;
-	return i;
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
@@ -44,10 +44,8 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		l;
 
-	if (!s)
-		return (0);
 	ft_set_zero(&i, &j, &l);
-	if (!ft_create_result(&result, (char *) s))
+	if (!s || !ft_create_result(&result, (char *) s))
 		return (0);
 	while (s[i])
 	{
