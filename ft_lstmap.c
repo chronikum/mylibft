@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:56:24 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/22 21:36:59 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 08:58:14 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *nl);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstnew(void *content);
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nl;
 	t_list	*ne;
