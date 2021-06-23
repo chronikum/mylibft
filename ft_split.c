@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:15:44 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 08:46:54 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/06/23 08:55:55 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s);
 
 int  ft_create_result(char ***result, char *s)
 {
-	if (!s)
-		return (0);
 	*result = malloc(sizeof(char *) * ft_strlen(s) + 1);
 	if (!*result)
 		return (0);
@@ -36,22 +34,19 @@ char **ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	l = 0;
-	if (!ft_create_result(&result, (char *) s))
+	if (!ft_create_result(&result, (char *) s) || !s)
 		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
 			i++;
-		if (s[i])
-		{
-			j = i;
-			while (s[i] != c && s[i])
-				i++;
-			result[l] = malloc(i - j + 1);
-			ft_memcpy(result[l], &(s[j]), i - j);
-			result[l][i - j] = 0;
-			l++;
-		}
+		j = i;
+		while (s[i] != c && s[i])
+			i++;
+		result[l] = malloc(i - j + 1);
+		ft_memcpy(result[l], &(s[j]), i - j);
+		result[l][i - j] = 0;
+		l++;
 		if (s[i])
 			i++;
 	}
@@ -61,8 +56,13 @@ char **ft_split(char const *s, char c)
 
 int	main()
 {
-	char *s = "Das ist ein Test!";
+	char *s = "Das      ist ein Test    d";
 	char p = ' ';
 
 	char **r = ft_split(s, p);
+	printf("%s", r[0]);
+	printf("%s", r[1]);
+	printf("%s", r[2]);
+	printf("%s", r[3]);
+	printf("%s", r[4]);
 }
