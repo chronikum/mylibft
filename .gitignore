@@ -5,6 +5,7 @@ a.out
 settings.json
 extensions.json
 .vscode/
+*/.vscode/
 .ignore
 main.c
 *.a
