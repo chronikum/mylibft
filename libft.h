@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/07/19 09:03:05 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/07/19 09:20:23 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
 # define MAXFD	4096
 # define BUFFER_SIZE	200
@@ -93,6 +94,6 @@ int		ft_putuint(unsigned int n);
 void	ft_putunlonglong(unsigned long long n, int fd);
 int		ft_put_hex(unsigned long long p, int u);
 
-int			get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 
 #endif
