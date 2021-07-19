@@ -6,7 +6,7 @@
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 13:36:19 by jfritz            #+#    #+#             */
-/*   Updated: 2021/06/23 09:41:34 by jfritz           ###   ########.fr       */
+/*   Updated: 2021/07/19 08:46:26 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -71,5 +72,22 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
+
+int		ft_dec_to_hex(unsigned long long n, int lower, int reset);
+void	ft_putunbr_fd(unsigned int n, int fd);
+int		ft_putaddr_fd(void *p);
+void	ft_putunlong(unsigned long n, int fd);
+char	*ft_strupper(char *str);
+char	ft_getlastchar(char *str);
+int		ft_inset(char c, char const *set);
+
+int		ft_printf(const char *format, ...);
+int		ft_is_available_type(char c);
+int		ft_putchar(char c);
+int		ft_putint(int n);
+int		ft_putstr(char *c);
+int		ft_putuint(unsigned int n);
+void	ft_putunlonglong(unsigned long long n, int fd);
+int		ft_put_hex(unsigned long long p, int u);
 
 #endif

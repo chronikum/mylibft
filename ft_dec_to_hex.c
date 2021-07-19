@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:35:22 by jfritz            #+#    #+#             */
-/*   Updated: 2021/07/19 08:20:44 by jfritz           ###   ########.fr       */
+/*   Created: 2021/07/05 13:46:30 by jfritz            #+#    #+#             */
+/*   Updated: 2021/07/19 08:36:54 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_dec_to_hex(unsigned long long n, int lower, int reset)
 {
-	unsigned int	l;
-	int				start;
-	int				end;
-	char			*r;
+	unsigned long long	o;
+	char				r;
+	static int			length = 0;
 
-	if (!s1 || !set)
-		return (NULL);
-	end = ft_strlen(s1);
-	start = 0;
-	l = ft_strlen(s1);
-	if (ft_strlen(set) == 0)
-		return (ft_strdup(s1));
-	while (ft_inset(s1[start], set) == 1)
-	{
-		start++;
-		l--;
-	}
-	while (ft_inset(s1[end - 1], set) == 1)
-	{
-		end--;
-		l--;
-	}
-	r = ft_substr(s1, start, l);
-	return (r);
+	o = 0;
+	if (reset)
+		length = 0;
+	if (n == 0)
+		return (length);
+	o = n % 16;
+	ft_dec_to_hex((n / 16), lower, 0);
+	if (o > 9)
+		r = 'A' + (o - 10);
+	else
+		r = (o + 48);
+	if (lower == 1)
+		r = ft_tolower(r);
+	length++;
+	write(1, &r, 1);
+	return (length);
 }

@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_inset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:35:22 by jfritz            #+#    #+#             */
-/*   Updated: 2021/07/19 08:20:44 by jfritz           ###   ########.fr       */
+/*   Created: 2021/07/06 14:48:51 by jfritz            #+#    #+#             */
+/*   Updated: 2021/07/13 09:57:05 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_inset(char c, char const *set)
 {
-	unsigned int	l;
-	int				start;
-	int				end;
-	char			*r;
+	int	count;
 
-	if (!s1 || !set)
-		return (NULL);
-	end = ft_strlen(s1);
-	start = 0;
-	l = ft_strlen(s1);
-	if (ft_strlen(set) == 0)
-		return (ft_strdup(s1));
-	while (ft_inset(s1[start], set) == 1)
+	count = 0;
+	while (set[count])
 	{
-		start++;
-		l--;
+		if (c == set[count])
+			return (1);
+		count++;
 	}
-	while (ft_inset(s1[end - 1], set) == 1)
-	{
-		end--;
-		l--;
-	}
-	r = ft_substr(s1, start, l);
-	return (r);
+	return (0);
 }

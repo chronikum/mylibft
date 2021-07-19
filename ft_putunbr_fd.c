@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 16:25:48 by jfritz            #+#    #+#             */
-/*   Updated: 2021/07/13 13:44:06 by jfritz           ###   ########.fr       */
+/*   Created: 2021/07/05 09:43:03 by jfritz            #+#    #+#             */
+/*   Updated: 2021/07/05 11:04:08 by jfritz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*g;
-	unsigned char	*d;
+void	ft_putstr_fd(char *s, int fd);
 
-	i = 0;
-	d = (unsigned char *) s;
-	while (n > i)
+static int	ft_check_biggest_unsigned(unsigned int n, int fd)
+{
+	if (n == 4294967295)
 	{
-		if ((d[i] != (unsigned char)c))
-			i++;
-		else
-		{
-			g = (unsigned char *) &s[i];
-			return (g);
-		}
+		ft_putstr_fd("4294967295", fd);
+		return (1);
 	}
 	return (0);
+}
+
+void	ft_putunbr_fd(unsigned int n, int fd)
+{
+	unsigned int	t;
+	char			c;
+
+	t = 0;
+	c = n + 48;
+	if (!ft_check_biggest_unsigned(n, fd))
+	{
+		if (n > 9)
+		{
+			t = n % 10;
+			n /= 10;
+			c = t + 48;
+			ft_putunbr_fd(n, fd);
+		}
+		else
+		{
+			c = n + 48;
+		}
+		write(fd, &c, 1);
+	}
 }
