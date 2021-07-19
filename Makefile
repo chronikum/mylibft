@@ -6,7 +6,7 @@
 #    By: jfritz <jfritz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 13:43:08 by jfritz            #+#    #+#              #
-#    Updated: 2021/07/19 08:52:35 by jfritz           ###   ########.fr        #
+#    Updated: 2021/07/19 09:02:46 by jfritz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,12 @@ ft_lstadd_front.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 PRINTFSRC = ./printf/putter/ft_putchar.c ./printf/putter/ft_putint.c ./printf/putter/ft_putstr.c ./printf/putter/ft_putuint.c \
 ./printf/putter/ft_put_hex.c ./printf/ft_printf.c ./printf/ft_available_types.c
 
+GNLSRC = ./gnl/get_next_line.c
+
 all: $(NAME)
 
 ${NAME}:
-	${CC} ${CFLAGS} -c ${SRC} ${PRINTFSRC} ${BNS}
+	${CC} ${CFLAGS} -c ${SRC} ${PRINTFSRC} ${GNLSRC} ${BNS}
 	ar rc ${NAME} *.o
 
 bonus:
